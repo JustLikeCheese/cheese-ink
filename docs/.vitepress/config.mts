@@ -31,5 +31,7 @@ const vitePressOptions = {
 export default defineConfig(withSidebar(vitePressOptions, {
   documentRootPath: '/docs',
   useTitleFromFrontmatter: true,
+  removePrefixAfterOrdering: true,
+  prefixSeparator: ".",
   sortFolderTo: 'top'
 }));

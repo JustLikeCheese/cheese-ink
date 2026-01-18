@@ -25,7 +25,24 @@ const vitePressOptions = {
     socialLinks: [
       { icon: 'github', link: 'https://github.com/JustLikeCheese' }
     ]
-  }
+  },
+  head: [
+    [
+      'script',
+      {
+        async: '',
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-TFPVZW0Q09'
+      }
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TFPVZW0Q09');`
+    ]
+  ]
 }
 
 export default defineConfig(withSidebar(vitePressOptions, {

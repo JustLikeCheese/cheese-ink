@@ -1,7 +1,8 @@
 import { defineConfig } from 'vitepress'
+import { withSidebar } from 'vitepress-sidebar';
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+const vitePressOptions = {
   title: "Cheese 的博客",
   description: "不要温和地走进那个良夜",
   themeConfig: {
@@ -25,4 +26,10 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/JustLikeCheese' }
     ]
   }
-})
+}
+
+export default defineConfig(withSidebar(vitePressOptions, {
+  documentRootPath: '/docs',
+  useTitleFromFrontmatter: true,
+  sortFolderTo: 'top'
+}));

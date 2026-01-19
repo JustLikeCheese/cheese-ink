@@ -2,14 +2,14 @@ import { defineConfig } from 'vitepress'
 import { withSidebar } from 'vitepress-sidebar';
 
 // https://vitepress.dev/reference/site-config
-const vitePressOptions = {
+export default defineConfig(withSidebar({
   title: "Cheese 的博客",
   description: "不要温和地走进那个良夜",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: '博客', link: '/blog/' },
-      { text: '工具', link: '/tools/' }
+      { text: '博客', link: '/博客/' },
+      { text: '工具', link: '/工具/' }
     ],
 
     sidebar: [
@@ -43,9 +43,7 @@ const vitePressOptions = {
       gtag('config', 'G-TFPVZW0Q09');`
     ]
   ]
-}
-
-export default defineConfig(withSidebar(vitePressOptions, {
+}, {
   documentRootPath: '/docs',
   useTitleFromFrontmatter: true,
   removePrefixAfterOrdering: true,

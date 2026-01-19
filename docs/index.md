@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Get started
-      link: /blog/
+      link: /博客/
     - theme: alt
       text: View on GitHub
       link: https://github.com/JustLikeCheese

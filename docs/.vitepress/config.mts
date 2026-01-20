@@ -28,6 +28,10 @@ export default defineConfig(withMermaid(withSidebar({
     ]
   },
 
+  markdown: {
+    math: true
+  },
+
   vite: {
     optimizeDeps: {
       include: ['mermaid'],

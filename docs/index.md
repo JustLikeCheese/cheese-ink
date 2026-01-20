@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Get started
-      link: /博客/
+      link: /博客/服务器/1. 公网服务器运维小记.md
     - theme: alt
       text: View on GitHub
       link: https://github.com/JustLikeCheese

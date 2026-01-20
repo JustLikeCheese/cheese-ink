@@ -1,14 +1,15 @@
 import { defineConfig } from 'vitepress'
 import { withSidebar } from 'vitepress-sidebar';
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig(withSidebar({
+export default defineConfig(withMermaid(withSidebar({
   title: "Cheese 的博客",
   description: "不要温和地走进那个良夜",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: '博客', link: '/博客/' },
+      { text: '博客', link: '/博客/服务器/1. 公网服务器运维小记.md' },
       { text: '工具', link: '/工具/' }
     ],
 
@@ -26,6 +27,16 @@ export default defineConfig(withSidebar({
       { icon: 'github', link: 'https://github.com/JustLikeCheese' }
     ]
   },
+
+  vite: {
+    optimizeDeps: {
+      include: ['mermaid'],
+    },
+    ssr: {
+      noExternal: ['mermaid'],
+    },
+  },
+
   head: [
     [
       'script',
@@ -45,8 +56,10 @@ export default defineConfig(withSidebar({
   ]
 }, {
   documentRootPath: '/docs',
+  useFolderTitleFromIndexFile: true,
   useTitleFromFrontmatter: true,
   removePrefixAfterOrdering: true,
   prefixSeparator: ".",
-  sortFolderTo: 'top'
-}));
+  sortFolderTo: 'top',
+  excludeByGlobPattern: ["其他/**"]
+})));

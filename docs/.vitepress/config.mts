@@ -10,8 +10,8 @@ export default defineConfig(withMermaid(withSidebar({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '博客', link: '/博客/服务器/1. 公网服务器运维小记.md' },
-      { text: '笔记', link: '/笔记/NexIDE/1. NexLua Plugin.md' },
-      { text: '工具', link: '/工具/' }
+      { text: '笔记', link: '/笔记/NexIDE/1. NexIDE Plugin.md' },
+      { text: '工具', link: '/工具/1. 神秘魔法.md' }
     ],
 
     socialLinks: [

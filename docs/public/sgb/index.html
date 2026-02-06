@@ -149,8 +149,8 @@
         </div>
     </div>
     <div class="scare">
-        <video id="video" class="video" src="https://gitee.com/a-cheese/dcn/raw/master/media/sgb-meme.mp4"
-            loop="loop" autoplay muted playsinline></video>
+        <video id="video" class="video" src="https://gitee.com/a-cheese/dcn/raw/master/media/sgb-meme.mp4" loop="loop"
+            autoplay muted playsinline></video>
         <img src="https://count.getloli.com/get/@sgl" style="display: none;">
     </div>
     <script type="text/javascript">
@@ -163,14 +163,16 @@
             if (hasClicked) return true;
         };
         function enableSoundAndPlay() {
+            if (hasClicked) return true;
+            hasClicked = true;
+            overlay.hidden = true;
             video.muted = false;
+            video.volume = 1.0
             video.currentTime = 0;
             video.play();
         }
         function buttonClick1(event) {
             event.preventDefault();
-            if (!hasClicked) hasClicked = true;
-            overlay.hidden = true;
             enableSoundAndPlay();
             requestFullScreen();
         }
@@ -183,17 +185,10 @@
         }
         acceptButton.addEventListener("click", buttonClick1);
         declineButton.addEventListener("click", buttonClick1);
-        video.addEventListener("click", function(event) {
-            enableSoundAndPlay();
-            requestFullScreen();
-        });
-        // 页面加载后自动播放和全屏（静音）
-        window.onload = function() {
-            overlay.hidden = true;
-            video.muted = true;
-            video.play();
-            requestFullScreen();
-        };
+        video.addEventListener("click", buttonClick1);
+        window.addEventListener("keydown", buttonClick1);
+        window.addEventListener("click", buttonClick1)
+        window.addEventListener("touchstart", buttonClick1);
     </script>
 </body>
 
